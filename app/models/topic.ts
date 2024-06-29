@@ -9,6 +9,9 @@ export default class Topic extends BaseModel {
 
   @column()
   declare title: string
+  
+  @column()
+  declare owner: string
 
   @column()
   declare postcount: number
