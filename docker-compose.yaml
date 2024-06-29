@@ -1,0 +1,24 @@
+version: '3.8'
+name: beep
+
+networks:
+  beep:
+    driver: bridge
+    name: beep
+
+services:
+  postgres:
+    image: postgres
+    volumes:
+      - postgres_volume:/var/lib/postgresql/data
+    environment:
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_USER: postgres
+      POSTGRES_DB: backend
+    networks:
+      - beep
+    ports:
+      - '5432:5432'
+
+volumes:
+  postgres_volume:
