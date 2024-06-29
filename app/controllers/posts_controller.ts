@@ -8,7 +8,7 @@ export default class PostsController {
     constructor(private postService: PostService) { }
 
     index() {
-        return this.postService.index
+        return this.postService.index()
     }
 
     findByTopic({ params }: HttpContext) {

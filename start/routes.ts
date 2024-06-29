@@ -21,7 +21,7 @@ router.group(()=>{
     router.put('',[TopicsController,'update'])
     router.delete('',[TopicsController,'delete'])
     router.group(()=>{
-      router.get('',[PostsController,'index'])
+      router.get('',[PostsController,'findByTopic'])
       router.post('',[PostsController,'store'])
       router.group(()=>{
         router.get('',[PostsController,'show'])

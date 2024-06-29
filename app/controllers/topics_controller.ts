@@ -8,7 +8,7 @@ export default class TopicsController {
     constructor(private topicService: TopicService) { }
 
     index() {
-        return this.topicService.index
+        return this.topicService.index()
     }
 
     show({ params }: HttpContext) {

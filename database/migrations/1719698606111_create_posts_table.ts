@@ -8,7 +8,7 @@ export default class extends BaseSchema {
       table.increments('id').primary()
       table.text('content')
       table.string('author')
-      table.integer('topic_id').references('id').inTable('topic').onDelete('CASCADE').notNullable()
+      table.integer('topic_id').references('id').inTable('topics').onDelete('CASCADE').notNullable()
       table.timestamp('created_at')
       table.timestamp('updated_at')
     })
