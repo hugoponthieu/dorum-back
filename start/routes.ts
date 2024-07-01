@@ -10,6 +10,7 @@
 import router from '@adonisjs/core/services/router'
 import TopicsController from '../app/controllers/topics_controller.js'
 import PostsController from '../app/controllers/posts_controller.js'
+import { middleware } from './kernel.js'
 
 
 
@@ -30,4 +31,10 @@ router.group(()=>{
       }).prefix('/:postId')
     }).prefix('/posts')
   }).prefix('/:topicId')
-}).prefix('/topics')
+}).prefix('/topics').use(middleware.auth({
+  guards: ['api']
+}))
+
+router.group(()=>{
+  
+}).prefix('/authentication')
